@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
   const prompt = `You are a recipe assistant. The user has these ingredients: ${list.join(", ")}.
 
-Suggest 3-5 recipes that use ONLY these ingredients as the base, but recipes may require a few additional common ingredients not listed.
+Suggest 5-10 recipes that use ONLY these ingredients as the base, but recipes may require a few additional common ingredients not listed.
 
 Return ONLY valid JSON, no markdown, no code fences, in this exact shape:
 {
