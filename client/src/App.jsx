@@ -1,13 +1,29 @@
 import { useState } from "react";
 import "./App.css";
 
-const suggestionChips = ["eggs", "spinach", "rice", "garlic"];
+const suggestionChips = ["eggs", "spinach", "rice", "garlic", "onion", "tomato", "pasta", "chicken", "cheese", "potato"];
 
 export default function App() {
   const [ingredients, setIngredients] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  function addIngredient(ingredient) {
+    setIngredients((current) => {
+      const trimmed = current.trim();
+      if (!trimmed) return ingredient;
+
+      const values = trimmed
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+      if (values.includes(ingredient)) return trimmed;
+
+      return `${trimmed}, ${ingredient}`;
+    });
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -54,7 +70,7 @@ export default function App() {
 
           <div className="chip-row" aria-label="Example ingredients">
             {suggestionChips.map((chip) => (
-              <button key={chip} type="button" className="chip" onClick={() => setIngredients(chip)}>
+              <button key={chip} type="button" className="chip" onClick={() => addIngredient(chip)}>
                 {chip}
               </button>
             ))}
