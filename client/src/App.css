@@ -1,0 +1,237 @@
+.app-shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #fff6e8 0%, #ffe2bd 45%, #ffd8a8 100%);
+  border: 1px solid rgba(179, 94, 20, 0.12);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(145, 88, 23, 0.14);
+  padding: 32px;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #9a4d00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: #2f241d;
+}
+
+.hero-text {
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  color: #6f5a43;
+  line-height: 1.7;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-form input {
+  flex: 1 1 280px;
+  border: 1px solid rgba(145, 88, 23, 0.2);
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.search-form input:focus {
+  border-color: #f08a1b;
+  box-shadow: 0 0 0 4px rgba(240, 138, 27, 0.16);
+}
+
+.search-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #ff8c2b, #f05d23);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(240, 93, 35, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(240, 93, 35, 0.28);
+}
+
+.search-form button:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.chip {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #7c4d14;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.chip:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+
+.chip.secondary {
+  background: #fff5e8;
+  color: #8a4b0f;
+  cursor: default;
+}
+
+.results-area {
+  margin-top: 24px;
+}
+
+.status-card {
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(99, 67, 25, 0.08);
+  color: #6f5a43;
+}
+
+.status-card.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-card.error {
+  border: 1px solid rgba(214, 54, 54, 0.16);
+  color: #b23232;
+  background: #fff4f4;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff8c2b;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 16px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(99, 67, 25, 0.08);
+  border: 1px solid rgba(145, 88, 23, 0.08);
+}
+
+.recipe-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.recipe-head h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2f241d;
+}
+
+.recipe-badge {
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #fff3e2;
+  color: #9a4d00;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.meta-block {
+  margin-bottom: 12px;
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a4d00;
+}
+
+.meta-text {
+  color: #7f6b57;
+}
+
+.recipe-instructions {
+  margin: 0;
+  color: #5f4e3c;
+  line-height: 1.7;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 18px 14px 36px;
+  }
+
+  .hero-card {
+    padding: 22px;
+  }
+
+  .recipe-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
